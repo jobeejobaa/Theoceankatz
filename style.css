@@ -191,6 +191,45 @@ h1 {
   transform: translateY(-2px);
 }
 
+/* Reset des styles navigateur pour les vrais <button> (bordure blanche "3D" par défaut) */
+button.btn {
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid rgba(245, 240, 232, 0.85);
+  outline-offset: 3px;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 16px 30px rgba(229, 107, 59, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(229, 107, 59, 0.3);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
+}
+
+.cta-form .btn {
+  margin-top: 6px;
+  padding: 14px 22px;
+}
+
 .hero-highlight {
   margin-top: 34px;
   display: grid;
@@ -503,4 +542,22 @@ h1 {
     flex-direction: column;
     align-items: stretch;
   }
+}
+
+/* Message de confirmation du formulaire : lisible sur le fond océan */
+.cta-form .contact-feedback.success {
+  background: rgba(245, 240, 232, 0.14);
+  color: var(--foam);
+  border: 1px solid rgba(245, 240, 232, 0.35);
+}
+
+.cta-form .contact-feedback.error {
+  background: rgba(229, 107, 59, 0.18);
+  color: var(--foam);
+  border: 1px solid rgba(229, 107, 59, 0.55);
+}
+
+.cta-form .contact-feedback a {
+  color: inherit;
+  text-decoration: underline;
 }
